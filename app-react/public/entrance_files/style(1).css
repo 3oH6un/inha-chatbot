@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+.wrap_text_banner{background:rgba(0,0,0,0.3);border-top:1px solid rgba(255,255,255,0.3);margin-top:45px;}
+.wrap_text_banner > .container{max-width:1550px;margin: 0 auto;position:relative;}
+
+/*슬라이드*/
+.wrap_text_banner ul{padding:0 60px;}
+.wrap_text_banner ul .slick-list{border-right:1px solid rgba(255,255,255,0.3);}
+.wrap_text_banner li{padding:20px 40px;border-left:1px solid rgba(255,255,255,0.3);background:url(/itc-proxy/sites/style_guide/images/common/plus_3_w.png) no-repeat 95%;}
+.wrap_text_banner li span.wrap_img{display:none;}
+.wrap_text_banner li img{display:none;}
+.wrap_text_banner li p{font-size:20px;color:rgba(255,255,255,0.8);line-height:1.2;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.wrap_text_banner li p.text_1{}
+.wrap_text_banner li p.text_2{}
+@media all and (max-width:1024px) {
+	.wrap_text_banner li{background:none;padding:15px 30px;}
+	.wrap_text_banner li p{font-size:16px;text-align:center;}
+}
+
+/*넘버링*/
+.wrap_text_banner .numbering{display:none;}
+.wrap_text_banner .numbering span{}
+.wrap_text_banner .numbering .now{}
+.wrap_text_banner .numbering .total{}
+
+/*컨트롤*/
+.wrap_text_banner .control{}
+.wrap_text_banner .control .container{}
+	/*페이징*/
+	.wrap_text_banner .paging{display:none;}
+	.wrap_text_banner .paging ul{}
+	.wrap_text_banner .paging li{}
+	.wrap_text_banner .paging button{}
+	/*재생정지*/
+	.wrap_text_banner .playstop{display:none;}
+	.wrap_text_banner .playstop button{}
+	.wrap_text_banner .playstop button.play{}
+	.wrap_text_banner .playstop button.stop{}
+	.wrap_text_banner .playstop button.on{}
+
+/*이전다음*/
+.wrap_text_banner .prevnext{}
+.wrap_text_banner .prevnext .container{}
+.wrap_text_banner .prevnext button{display:inline-block;text-indent:-9999px;background:url(/itc-proxy/sites/style_guide/images/common/arrow_4_w.png) no-repeat center;top:0;position:absolute;width:60px;height:100%;}
+.wrap_text_banner .prevnext button.prev{left:0;transform:rotate(180deg);}
+.wrap_text_banner .prevnext button.next{right:0;}
+
+@media all and (max-width:1550px) {
+	.wrap_text_banner > .container{max-width:100%;}
+}
+@media all and (max-width:1024px) {
+	.wrap_text_banner{margin-top:0;}
+	.wrap_text_banner .prevnext button{background-color:rgba(0,0,0,0) !important;}
+}
+@media all and (max-width:768px) {
+	.wrap_text_banner ul{padding:0 40px;}
+	.wrap_text_banner .prevnext button{width:40px;}
+}
+
+
+/*HOVER효과************************************************************/
+@media all and (min-width:1025px) {
+	.wrap_text_banner li:hover{background:rgba(2,112,221,0.9) url(/itc-proxy/sites/style_guide/images/common/arrow_4_w.png) no-repeat 95%;border-color:rgba(2,112,221,0.9);}
+	.wrap_text_banner .playstop button:hover,
+	.wrap_text_banner .prevnext button:hover{background-color:rgba(0,0,0,0.6) !important;}
+}

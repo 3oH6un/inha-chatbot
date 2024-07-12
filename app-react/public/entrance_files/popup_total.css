@@ -1,0 +1,5 @@
+@charset "utf-8";
+.nomoreOpen{background-color:#333;color:#fff}
+.nomoreOpen form{overflow:hidden;margin:5px 10px;display:block}
+.nomoreOpen form span{float:left}
+.nomoreOpen form a.PZwindowClose{background:url(/itc-proxy/Web-home/fnct/popup/template/images/PZwindowClose.gif) no-repeat 50% 50%;float:right;width:12px;height:12px;margin:3px 0 0;text-indent:-5000px}

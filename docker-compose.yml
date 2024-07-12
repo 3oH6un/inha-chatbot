@@ -1,0 +1,125 @@
+# 도커 가상 네트워크 설정
+networks:
+  icb-network:
+    name: icb-network
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/29
+          gateway: 172.20.0.1
+
+# 도커 서비스 설정
+services:
+  # Neo4j Database 설정
+  neo4j:
+    container_name: neo4j
+    image: neo4j:ubi9
+    restart: always
+    user: root
+    hostname: neo4j
+    networks:
+      icb-network:
+        ipv4_address: 172.20.0.3
+    volumes:
+      - ./db-neo4j/data:/data
+      - ./db-neo4j/conf:/var/lib/neo4j/conf
+      - ./db-neo4j/plugins:/var/lib/neo4j/plugins
+      - ./db-neo4j/import:/var/lib/neo4j/import
+      - ./logs/db-neo4j:/logs
+    environment:
+      TZ: Asia/Seoul
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD}
+      NEO4J_PLUGINS: "apoc"
+
+  # PostgreSQL Database 설정
+  postgres:
+    container_name: postgres
+    image: postgres:15-alpine
+    restart: always
+    user: root
+    hostname: postgres
+    networks:
+      icb-network:
+        ipv4_address: 172.20.0.4
+    volumes:
+      - ./db-postgres/data:/var/lib/postgresql/data
+      - ./db-postgres/conf:/etc/postgresql
+      - ./logs/db-postgres:/var/log/postgresql
+    environment:
+      TZ: Asia/Seoul
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USERNAME}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+  # FastAPI App 설정
+  fastapi:
+    container_name: fastapi
+    restart: always
+    user: root
+    hostname: fastapi
+    networks:
+      icb-network:
+        ipv4_address: 172.20.0.5
+    volumes:
+      - ./logs/app-fastapi:/app/logs
+    build:
+      context: ./app-fastapi
+      dockerfile: Dockerfile
+    image: icb-fastapi
+    environment:
+      TZ: Asia/Seoul
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      NEO4J_URI: ${NEO4J_URI}
+      NEO4J_USERNAME: ${NEO4J_USERNAME}
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD}
+    depends_on:
+      - neo4j
+
+  # Spring Boot App 설정
+  springboot:
+    container_name: springboot
+    restart: always
+    user: root
+    hostname: springboot
+    networks:
+      icb-network:
+        ipv4_address: 172.20.0.6
+    volumes:
+      - ./logs/app-springboot:/app/logs
+    build:
+      context: ./app-springboot
+      dockerfile: Dockerfile
+    image: icb-springboot
+    environment:
+      TZ: Asia/Seoul
+      SPRING_DATASOURCE_URL: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      FASTAPI_URL: ${FASTAPI_URL}
+    depends_on:
+      - postgres
+
+  # React App 설정
+  react:
+    container_name: react
+    restart: always
+    user: root
+    hostname: react
+    networks:
+      icb-network:
+        ipv4_address: 172.20.0.2
+    volumes:
+      - ./app-react/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./app-react/nginx/config:/etc/nginx/conf.d
+      - ./logs/app-react:/var/log/nginx
+    build:
+      context: ./app-react
+      dockerfile: Dockerfile
+    image: icb-react
+    environment:
+      TZ: Asia/Seoul
+    depends_on:
+      - fastapi
+      - springboot
+    ports:
+      - "80:80"

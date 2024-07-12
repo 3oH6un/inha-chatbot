@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+@media (max-width: 350px){
+  .btnApplyGup a {
+    text-align: center;
+  }
+  .btnApplyGup a:after {
+	position:relative;
+	width:80%;
+  }
+
+}
+
+.private{color:#fff;}
+
+/*입시도우미 - 응답하라2024*/
+.rowBox_link2 {width: 100%;}
+.rowBox_link2 .rowBox_link_btn {width: 100%; font-size: 22px; padding: 30px 0; background-size: cover;}
+.rowBox_link2 .rowBox_link_btn:hover {background-size: unset;}
+@media (max-width: 768px){
+  .rowBox_link2 .rowBox_link_btn {font-size: 18px;}
+}

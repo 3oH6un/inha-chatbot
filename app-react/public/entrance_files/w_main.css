@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+/*퀵링크************************************************************/
+#multipleDiv_ipsi_34{margin-top:-353px;}
+.main_quick{max-width:1550px;margin: 0 auto;}
+.main_quick ul{display:flex;justify-content:flex-end;}
+.main_quick ul li{margin:0 10px;padding:20px 0;}
+.main_quick ul li a{display:block;text-align:center;font-size:22px;font-family:'Noto Regular';width:180px;height:180px;padding-top:35px;border-radius:10px;background-color:rgba(255,255,255,0.8);position:relative;z-index:1;}
+/*
+.main_quick ul li a.a_5{padding-top:5px;}
+*/
+.main_quick ul li a:after{content:"";display:block;width:124px;height:95px;margin:10px auto 0 auto;}
+.main_quick ul li a.a_1:after{background:url(/itc-proxy/sites/ipsi/images/main/quick_icon_1.png);}
+.main_quick ul li a.a_2:after{background:url(/itc-proxy/sites/ipsi/images/main/quick_icon_2.png);}
+.main_quick ul li a.a_3:after{background:url(/itc-proxy/sites/ipsi/images/main/quick_icon_3.png);}
+.main_quick ul li a.a_4:after{background:url(/itc-proxy/sites/ipsi/images/main/quick_icon_4.png);}
+.main_quick ul li a.a_5:after{background:url(/itc-proxy/sites/ipsi/images/main/quick_icon_5.png);}
+@media all and (max-width:1550px) {
+	.main_quick{max-width:100%;}
+}
+@media all and (max-width:1024px) {
+	#multipleDiv_ipsi_34{margin-top:-240px;}
+	.main_quick ul{justify-content:center;}
+	.main_quick ul li a{font-size:18px;width:130px;height:130px;padding-top:25px;}
+	.main_quick ul li a:after{width:40px;height:40px;background-size:100% !important;}
+}
+@media all and (max-width:768px) {
+	#multipleDiv_ipsi_34{margin-top:-209px;}
+	.main_quick ul li a{font-size:16px;width:100px;height:100px;padding-top:15px;line-height:1.1;}
+	.main_quick ul li a i{display:block;}
+	.main_quick ul li a:after{width:30px;height:30px;}
+}
+@media all and (max-width:480px) {
+	#multipleDiv_ipsi_34{margin-top:-123px;}
+	.main_quick ul{justify-content:space-between;}
+	.main_quick ul li{padding:0;margin:0 1px 0 0;width:100%;}
+	.main_quick ul li:last-child{margin:0;}
+	.main_quick ul li a{width:auto;height:auto;border-radius:0;padding:10px 3px;}
+	.main_quick ul li a:after{display:none;}
+}
+
+
+/*텍스트배너************************************************************/
+#multipleDiv_ipsi_35{z-index:1;}
+
+
+/*공지_팝업_링크************************************************************/
+#multipleDiv_ipsi_37{background:#dbe9f9;}
+#multipleDiv_ipsi_39{background:#FFF;}
+#multipleContentsDiv_ipsi_37,
+#multipleContentsDiv_ipsi_39{max-width:1550px;margin: 0 auto;padding:85px 0;overflow:hidden;}
+@media all and (max-width:1550px) {
+	#multipleContentsDiv_ipsi_37,
+	#multipleContentsDiv_ipsi_39{max-width:96%;}
+}
+@media all and (max-width:1280px) {
+	#multipleContentsDiv_ipsi_37,
+	#multipleContentsDiv_ipsi_39{padding:5% 0;}
+}
+@media all and (max-width:1024px) {
+	#multipleContentsDiv_ipsi_37,
+	#multipleContentsDiv_ipsi_39{padding:2% 0;}
+}
+
+/*구조*/
+#multipleContentsDiv_ipsi_37,
+#multipleContentsDiv_ipsi_39{display:flex;justify-content:space-between;flex-wrap:wrap;}
+/*공지*/#menu58_obj90{width:42% !important;background:#FFF;}
+/*입시*/#menu58_obj1257{width:55% !important;background:#FFF;}
+/*배너*/#menu58_obj1302{width:calc(100% - 435px) !important;}
+/*팝업*/#menu58_obj1304{width:395px !important;}
+@media all and (max-width:1024px) {
+	/*공지*/#menu58_obj90,
+	/*입시*/#menu58_obj1257{width:100% !important;}
+	/*입시*/#menu58_obj1257{margin-top:20px !important;}
+}
+@media all and (max-width:768px) {
+	/*배너*/#menu58_obj1302,
+	/*팝업*/#menu58_obj1304{width:100% !important;}
+	/*팝업*/#menu58_obj1304{margin-top:20px !important;}
+}
+
+
+/*입시서비스************************************************************/
+.ipsi_service{padding:30px;}
+.ipsi_service h3{font-size:30px;font-family:'Noto Medium';margin-bottom:20px;}
+.ipsi_service > ul{position:relative;}
+.ipsi_service > ul > li{}
+.ipsi_service > ul > li .list{display:none;}
+.ipsi_service > ul > li.active .list{display:block;}
+
+.ipsi_service .title{position:absolute;top:0;width:14.285%;}
+.ipsi_service .title a{display:block;padding:12px 0;background:#FFF;text-align:center;font-size:18px;border-bottom:1px solid #DDD;position:relative;}
+.ipsi_service .title a:after{content:"";display:block;width:1px; height:14px;background:#ddd;position:absolute;top:calc(50% - 7px);right:0;}
+.ipsi_service > ul > li.active .title a{background:#0079f4;border-color:#0079f4;color:#FFF;box-sizing:border-box;}
+.ipsi_service > ul > li.active .title a:after{display:none;}
+.ipsi_service > ul > li:last-child .title a:after{display:none;}
+.ipsi_service > ul > li:nth-child(1) .title{left:0;}
+.ipsi_service > ul > li:nth-child(2) .title{left:14.285%;}
+.ipsi_service > ul > li:nth-child(3) .title{left:28.57%;}
+.ipsi_service > ul > li:nth-child(4) .title{left:42.855%;}
+.ipsi_service > ul > li:nth-child(5) .title{left:57.14%;}
+.ipsi_service > ul > li:nth-child(6) .title{left:71.425%;}
+.ipsi_service > ul > li:nth-child(7) .title{left:85.71%;}
+
+.ipsi_service .list{padding-top:50px;}
+.ipsi_service .list > div{display:flex;font-size:16px;border-bottom:1px dotted #DDD;}
+.ipsi_service .list strong,
+.ipsi_service .list span{display:block;padding:7px 25px;}
+.ipsi_service .list strong{width:200px;background:#fafafa;color:#022968;}
+.ipsi_service .list span{width:calc(100% - 220px);}
+@media all and (max-width:768px) {
+	.ipsi_service .title{width:25%;}
+	.ipsi_service > ul > li:nth-child(5) .title,
+	.ipsi_service > ul > li:nth-child(6) .title,
+	.ipsi_service > ul > li:nth-child(7) .title{top:50px;}
+	.ipsi_service > ul > li:nth-child(2) .title{left:25%;}
+	.ipsi_service > ul > li:nth-child(3) .title{left:50%;}
+	.ipsi_service > ul > li:nth-child(4) .title{left:75%;}
+	.ipsi_service > ul > li:nth-child(5) .title{left:0%;}
+	.ipsi_service > ul > li:nth-child(6) .title{left:25%;}
+	.ipsi_service > ul > li:nth-child(7) .title{left:50%;}
+	.ipsi_service .title a{font-size:16px;}
+
+	.ipsi_service .list{padding-top:97px;}
+	.ipsi_service .list > div{flex-wrap:wrap;}
+	.ipsi_service .list strong,
+	.ipsi_service .list span{width:100%;padding:10px 15px;}
+}
+
+
+/*바로가기************************************************************/
+.main_link{}
+.main_link ul{display:flex;justify-content:space-between;flex-wrap:wrap;}
+.main_link ul li{width:33.33%;height:192px;}
+.main_link ul li a{display:block;padding:25px;height:100%;color:#FFF;font-size:25px;font-family:'Noto Regular';position:relative;}
+.main_link ul li a.a_1{background:#007edd;}
+.main_link ul li a.a_2{background:#019cb8;}
+.main_link ul li a.a_3{background:#155ed7;}
+.main_link ul li a.a_4{background:#019d8c;}
+.main_link ul li a.a_5{background:#0278bc;}
+.main_link ul li a.a_6{background:#009bce;}
+.main_link ul li a:before{content:"";display:block;width:64px;height:60px;position:absolute;right:25px;bottom:25px;}
+.main_link ul li a.a_1:before{background:url(/itc-proxy/sites/ipsi/images/main/lin_icon_1.png) no-repeat center;}
+.main_link ul li a.a_2:before{background:url(/itc-proxy/sites/ipsi/images/main/lin_icon_2.png) no-repeat center;}
+.main_link ul li a.a_3:before{background:url(/itc-proxy/sites/ipsi/images/main/lin_icon_3.png) no-repeat center;}
+.main_link ul li a.a_4:before{background:url(/itc-proxy/sites/ipsi/images/main/lin_icon_4.png) no-repeat center;}
+.main_link ul li a.a_5:before{background:url(/itc-proxy/sites/ipsi/images/main/lin_icon_5.png) no-repeat center;}
+.main_link ul li a.a_6:before{background:url(/itc-proxy/sites/ipsi/images/main/lin_icon_6.png) no-repeat center;}
+@media all and (max-width:1280px) {
+	.main_link ul li a{font-size:20px;}
+}
+@media all and (max-width:1024px) {
+	.main_link ul li a{font-size:18px;}
+}
+@media all and (max-width:768px) {
+	.main_link ul li{width:50%;height:64px;}
+	.main_link ul li a{padding:15px 49px 15px 15px;font-size:18px;}
+	.main_link ul li a:before{height:100%;right:0;bottom:0;background-size:35px !important;}
+}
+
+
+/*HOVER효과************************************************************/
+@media all and (min-width:1025px) {
+	.main_quick ul li a:hover{color:#FFF;background-color:rgba(0,109,206,0.8);transform:translate(0,-20px);transition: all 0.5s cubic-bezier(0.2, 0, 0.3, 1);}
+	.main_quick ul li a.a_3:hover:after{background:url(/itc-proxy/sites/ipsi/images/main/quick_icon_3_w.png);}
+    .main_quick ul li a.a_5:hover:after{background:url(/itc-proxy/sites/ipsi/images/main/quick_icon_5_w.png);}
+
+	.main_link ul li a:hover{background:url(/itc-proxy/sites/style_guide/images/common/pattern_0.png) center;}
+	.main_link ul li a:hover:before{transform: rotatey(360deg);transition: all 0.7s cubic-bezier(0.2, 0, 0.3, 1);}
+}
+a.openFullPopup {top: 30% !important;}

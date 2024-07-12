@@ -1,0 +1,66 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.1'
+	id 'io.spring.dependency-management' version '1.1.5'
+}
+
+group = 'kr.ac.itc'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+jar {
+    enabled = false
+}
+
+bootJar {
+    archiveFileName = 'inha-chatbot.jar'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// web
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// lombok
+	testImplementation 'org.projectlombok:lombok'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+    // jpa
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // postgresql
+	runtimeOnly 'org.postgresql:postgresql'
+
+	// m1 맥 오류
+    implementation 'io.netty:netty-resolver-dns-native-macos:4.1.68.Final:osx-aarch_64'
+
+    // webclient
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+    // swagger
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
+
+	// test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	testImplementation 'org.mockito:mockito-core:5.12.0'
+	testImplementation 'com.squareup.okhttp3:mockwebserver:4.12.0'
+    testImplementation 'io.projectreactor:reactor-test:3.6.7'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

@@ -1,0 +1,80 @@
+@charset "UTF-8";
+/*열기버튼*/
+a.openFullPopup{display:block;width:70px;height:70px;padding-top:10px;position:fixed;top:20%;left:30px;z-index:10;border-radius:5px;background:#0149cf;box-shadow:0 0 5px #222;color:#FFF;font-size:16px;text-align:center;}
+a.openFullPopup span{display:block;color:#01bdbc;font-size:20px;font-family: 'Titillium Web', sans-serif;font-weight:700;}
+
+/*풀팝업*/
+.full_popup{}
+.main_full_popup{box-sizing:border-box;position:fixed;top:0;left:0;width:100%;height:100%;z-index:11}
+.main_full_popup:before{content:"";display:block;width:100%;height:100%;position:fixed;top:0;left:0;background:rgba( 0,0,0,0.7 ) url(/itc-proxy/sites/style_guide/images/common/pattern_11.png)}
+.main_full_popup .main_full_popup_wrap{width:100%;height:100%;display:table;}
+.main_full_popup ._fnctWrap{display:table-cell;vertical-align:middle}
+.wrap-full-popup{position:relative;max-width:1200px;margin: 0 auto}
+.wrap-full-popup .slick-slider{}
+.wrap-full-popup .slick-list{}
+.wrap-full-popup .slick-list .slick-track{
+}
+.wrap-full-popup .slick-list .slick-track .slick-slide{text-align:center}
+.wrap-full-popup .slick-list .slick-track .slick-slide div {margin:50px}
+.wrap-full-popup .slick-list .slick-track .slick-slide a{}
+.wrap-full-popup .slick-list .slick-track .slick-slide img{display:inline-block;max-width:100%}
+.wrap-full-popup .slick-list .slick-track .slick-slide.slick-current.slick-active{
+}
+.wrap-full-popup .slick-list .slick-track .slick-slide.slick-current.slick-active div li{
+}
+/*SLIDER 콘트롤*/
+.wrap-full-popup .control button,
+.wrap-full-popup .prevnext button{display:block;cursor:pointer;border:0;text-indent:-9999px;font-size:0;margin:0;padding:0;line-height:0}
+.wrap-full-popup .control{overflow:hidden;text-align:center;line-height:0;padding:40px 0 20px 0}
+/*paging*/
+.wrap-full-popup .control .paging{display:inline-block}
+.wrap-full-popup .control .paging ul.slick-dots{text-align:center;font-size:0}
+.wrap-full-popup .control .paging ul.slick-dots li{display:inline-block;margin:0 5px}
+.wrap-full-popup .control .paging ul.slick-dots li button{width:10px;height:10px;background:#DDD;border-radius:30px}
+.wrap-full-popup .control .paging ul.slick-dots li.slick-active button{width:30px;background:#0179f4}
+.wrap-full-popup .control .paging ul.slick-dots li button:hover{background:#666}
+/*playStop*/
+.wrap-full-popup .control .playstop{display:inline-block}
+.wrap-full-popup .control .playstop button{display:none;width:13px;height:14px}
+.wrap-full-popup .control .playstop button.on{display:block}
+.wrap-full-popup .control .playstop button.stop{background:url(/itc-proxy/sites/style_guide/images/common/pause_3_w.png) no-repeat center}
+.wrap-full-popup .control .playstop button.play{background:url(/itc-proxy/sites/style_guide/images/common/play_3_w.png) no-repeat center}
+/*prevNext*/
+.wrap-full-popup .prevnext{}
+.wrap-full-popup .prevnext .container{}
+.wrap-full-popup .prevnext .container button{position:absolute;top:calc(50% - 85px);width:50px;height:50px;filter:alpha(opacity=7);opacity:0.7;background:url(/itc-proxy/sites/style_guide/images/common/arrow_5_w.png) no-repeat center}
+.wrap-full-popup .prevnext .container button.prev{left:-40px;transform:rotate(180deg);}
+.wrap-full-popup .prevnext .container button.next{right:-40px;}
+.wrap-full-popup .prevnext .container button:hover{filter:alpha(opacity=95);opacity:0.95;}
+/*오늘하루열지않음*/
+.wrap-full-popup .noMore{text-align:center;font-size:18px;color:#FFF}
+.wrap-full-popup .noMore input{display:inline-block;width:20px;height:20px;-webkit-appearance:none;appearance:none;-moz-appearance:none;background-color:#DDD;border:1px solid #888;border-radius:3px;vertical-align:-6px}
+.wrap-full-popup .noMore input[type=checkbox]:checked{background:#FFF url(/itc-proxy/sites/style_guide/images/common/bul_checkbox.png) no-repeat center;}
+.wrap-full-popup .noMore label{padding:0 10px}
+/*닫기버튼*/
+.wrap-full-popup .noMore a.closeWin{display:inline-block;margin-left:10px;text-indent:-9999px;background:url(/itc-proxy/sites/style_guide/images/common/x_3_w.png) no-repeat center;width:35px;height:35px;vertical-align:3px}
+@media only screen and (max-width:1280px){
+	a.openFullPopup{filter:alpha(opacity=70);opacity:0.7}
+	.wrap-full-popup{max-width:1000px;}
+}
+@media only screen and (max-width:1024px){
+	.wrap-full-popup{width:900px;}
+		a.openFullPopup{top:120px;left:10px;}
+}
+@media only screen and (max-width:768px){
+	.wrap-full-popup{width:400px;}
+	a.openFullPopup{width:50px;height:45px;top:110px;font-size:10px;padding-top:5px;}
+	a.openFullPopup span{font-size:14px;}
+}
+@media only screen and (max-width:480px){
+	.wrap-full-popup{width:300px;}
+}
+@media only screen and (max-width:320px){
+	.wrap-full-popup{width:200px;}
+}
+
+
+/*HOVER효과************************************************************/
+@media all and (min-width:1025px) {
+	a.openFullPopup:hover{background-color:#52575c;}
+}

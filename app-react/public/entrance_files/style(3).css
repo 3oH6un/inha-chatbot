@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+.wrap_img_banner{}
+.wrap_img_banner .container{}
+
+/*슬라이드*/
+.wrap_img_banner,
+.wrap_img_banner .slick-list{height:180px !important;}
+.wrap_img_banner .slick-list{position:absolute;top:0;left:50%;width:2000px;margin-left:-1000px;}
+.wrap_img_banner li{position:relative;}
+.wrap_img_banner li span.wrap_img{position:absolute;left:0;top:0;width:100%;}
+.wrap_img_banner li img{width:100%;}
+.wrap_img_banner li p{color:rgba(255,255,255,1);text-align:center;width:100%;position:relative;}
+.wrap_img_banner li p.text_1{font-size:34px;font-family:'Noto Bold';padding-top:30px;}
+.wrap_img_banner li p.text_2{font-size:24px;padding:10px 0 30px 0;}
+@media only screen and (min-width:2001px){
+	.wrap_img_banner .slick-list{left:0;width:100%;margin-left:0}
+}
+@media only screen and (max-width:1024px){
+	.wrap_img_banner,
+	.wrap_img_banner .slick-list{height:126px !important;}
+	.wrap_img_banner .slick-list{width:1400px;margin-left:-700px}
+	.wrap_img_banner li p.text_1{font-size:26px;padding-top:20px;}
+	.wrap_img_banner li p.text_2{font-size:20px;padding-top:5px;padding-bottom:20px;}
+}
+@media only screen and (max-width:768px){
+	.wrap_img_banner,
+	.wrap_img_banner .slick-list{height:108px !important;}
+	.wrap_img_banner .slick-list{width:1200px;margin-left:-600px}
+	.wrap_img_banner li p.text_1{font-size:18px;}
+	.wrap_img_banner li p.text_2{font-size:16px;}
+}
+
+/*공통*/
+.wrap_img_banner .playstop,
+.wrap_img_banner .paging li{line-height:0;}
+.wrap_img_banner .paging button,
+.wrap_img_banner .playstop button,
+.wrap_img_banner .prevnext button{display:inline-block;text-indent:-9999px;}
+
+/*넘버링*/
+.wrap_img_banner .numbering{display:none;}
+.wrap_img_banner .numbering span{}
+.wrap_img_banner .numbering .now{}
+.wrap_img_banner .numbering .total{}
+
+/*컨트롤*/
+.wrap_img_banner .control{position:absolute;left:0;bottom:15px;width:100%;}
+.wrap_img_banner .control .container{display:flex;justify-content:center;align-items:center;}
+	/*페이징*/
+	.wrap_img_banner .paging{}
+	.wrap_img_banner .paging ul{display:flex;justify-content:center;}
+	.wrap_img_banner .paging li{padding:0 3px;}
+	.wrap_img_banner .paging button{width:7px;height:7px;background:#FFF;border-radius:30px;}
+	.wrap_img_banner .paging li.slick-active button{background:#fed904;}
+	/*재생정지*/
+	.wrap_img_banner .playstop{margin-left:5px;}
+	.wrap_img_banner .playstop button{display:none;width:10px;height:10px;}
+	.wrap_img_banner .playstop button.play{background:url(/itc-proxy/sites/style_guide/images/common/play_1_w.png) no-repeat center;}
+	.wrap_img_banner .playstop button.stop{background:url(/itc-proxy/sites/style_guide/images/common/pause_1_w.png) no-repeat center;}
+	.wrap_img_banner .playstop button.on{display:inline-block;}
+
+/*이전다음*/
+.wrap_img_banner .prevnext{}
+.wrap_img_banner .prevnext .container{}
+.wrap_img_banner .prevnext button{width:30px;height:30px;position:absolute;top:calc(50% - 15px);background:url(/itc-proxy/sites/style_guide/images/common/arrow_5_w.png) no-repeat center;}
+.wrap_img_banner .prevnext button.prev{left:30px;transform:rotate(180deg);}
+.wrap_img_banner .prevnext button.next{right:30px;}
+@media all and (max-width:768px) {
+	.wrap_img_banner .prevnext button.prev{left:0;}
+	.wrap_img_banner .prevnext button.next{right:0;}
+}
+
+
+
+
+/*HOVER효과************************************************************/
+@media all and (min-width:1025px) {
+	.wrap_img_banner .prevnext button:hover{background-position:right center;transition: all 0.2s cubic-bezier(0.2, 0, 0.3, 1);}
+}

@@ -1,0 +1,6 @@
+# Ignore all files and directories in the current directory
+*
+
+# But include specific files or directories you want to track
+!.gitignore
+!README.md
